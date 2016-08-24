@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商超BI系统-SMARK BI-供应商分析</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/geo.js"></script>
+    <style type="text/css">
+        .h-25{height: 25px;}
+        .l-h-25{line-height: 25px;}
+        .bg-7996D2{background-color: #7996D2;}
+        #selectUp:hover{background-color: #364860;color:#ffffff;}
+        .text-center{text-align: center;}
+        .w-50{width: 50px;}
+        .i-block{display: inline-block;}
+        .transition-3{transition:0.3s ease;}
+    </style>
+</head>
+
+<body>
+    <div class="bi-head">
+        <div class="bi-barinfo f-fr"><a href="javascript:void(0)">admin<img src="images/bar1.png" class="f-fl pdt-14 pdr-5" alt="用户名"></a>
+            <a href="index.html">退出<img src="images/bar2.png" alt="退出" class="f-fl pdt-22 pdr-5"></a>
+        </div>
+        <div class="bi-logo">
+            <a href="commodity.html"><img src="images/logo.png" alt="SMARK BI"></a>
+        </div>
+    </div>
+    <div class="bi-body">
+        <!-- 菜单 -->
+        <div class="bi-menu">
+            <ul>
+                <li><a href="commodity.html" class=""><i class="icon icon1"></i>商品分析</a></li>
+                <li><a href="customert.html" class=""><i class="icon icon2"></i>顾客分析</a></li>
+                <li><a href="supply.html" class="a-fadeinL mon"><i class="icon icon3"></i>供应商分析</a></li>
+                <li><a href="personnel.html" class=""><i class="icon icon4"></i>人员分析</a></li>
+            </ul>
+        </div>
+        <!-- 菜单 end-->
+        <!-- 主体 -->
+        <div class="bi-main">
+            <div class="bi-main-box">
+                <!-- 筛选 begin-->
+              <!--   <div class="row mgt-20 mgb-20">
+                    <span class="h-25 l-h-25">选择分类：</span>
+                    <select class="h-25 l-h-25"  id="s1">
+                        <option value="">选择一级分类</option>
+                    </select>
+                    <select class="h-25 l-h-25"  id="s2">
+                        <option value="">选择二级分类</option>
+                        <option value="">休闲食品</option>
+                        <option value="">罐装食品</option>
+                    </select>
+                    <select class="h-25 l-h-25"  id="s3">
+                        <option value="">选择三级分类</option>
+                    </select>
+                    <span class="h-25 l-h-25">选择年份：</span>
+                    <select  id="select_year" class="h-25 l-h-25">
+                        <option value="">选择年份</option>
+                    </select>
+                    <a href="javascript:;" id="selectUp" class="h-25 l-h-25 w-50 text-center bg-7996D2 c-ffffff i-block transition-3">筛选</a>
+                </div> -->
+                <!-- 筛选 end-->
+
+                <div class="row mgt-20">
+                    <!--所供商品毛利率占比统计 begin-->
+                    <div class="col-6">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">所供商品毛利率占比统计</span></div>
+                            <div class="bd">
+                                <div id="e1" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--所供商品毛利率占比统计 end-->
+                    <!--周转率/交叉比率 begin-->
+                    <div class="col-6">
+                        <div class="chartbox mgl-10">
+                            <div class="hd"><span class="u-tab">周转率/交叉比值</span></div>
+                            <div class="bd">
+                                <!-- 客户年龄分布 -->
+                                <div id="e2" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--周转率/交叉比率 end-->
+                </div>
+                <!--供货量综合统计 begin-->
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-12">
+                        <div class="chartbox  ">
+                            <div class="hd"><span class="u-tab">供货量综合统计</span></div>
+                            <div class="bd">
+                                <div id="e3" class="chartsbox4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--供货量综合统计 end-->
+                <!--供货额综合统计 begin-->
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-12">
+                        <div class="chartbox  ">
+                            <div class="hd"><span class="u-tab">供货额综合统计</span></div>
+                            <div class="bd">
+                                <div id="e4" class="chartsbox4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--供货额综合统计 end-->
+               
+                <div class="row mgt-20">
+                    <!-- 到货时间TOP5 begin-->
+                    <div class="col-6">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">到货时间TOP</span></div>
+                            <div class="bd">
+                                <div id="e6" class="chartsbox4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--到货时间TOP5 end-->
+                    <!--综合统计指数 begin-->
+                    <div class="col-6">
+                        <div class="chartbox mgl-10">
+                            <div class="hd"><span class="u-tab">综合统计指数</span></div>
+                            <div class="bd pd-0 pdb-16">
+                                <div id="e7" class="chartsbox4 f-oay"><table id="biTable" cellspacing="0" class="biTable" width="100%"></table></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--综合统计指数 end-->
+                </div>
+
+				 <!--进货额/销售额 begin-->
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-12">
+                        <div class="chartbox">
+                            <div class="hd"><span class="u-tab">进货额/销售额</span></div>
+                            <div class="bd">
+                                <div id="e5" class="chartsbox4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--进货额/销售额 end-->
+
+            </div>
+        </div>
+        <!-- 主体 end-->
+    </div>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/supply.js"></script>
+</body>
+
+</html>

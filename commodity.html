@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商超BI系统-SMARK BI-商品分析</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+    <div class="bi-head">
+        <div class="bi-barinfo f-fr"><a href="javascript:void(0)">admin<img src="images/bar1.png" class="f-fl pdt-14 pdr-5" alt="用户名"></a>
+            <a href="index.html">退出<img src="images/bar2.png" alt="退出" class="f-fl pdt-22 pdr-5"></a>
+        </div>
+        <div class="bi-logo">
+            <a href="commodity.html"><img src="images/logo.png" alt="SMARK BI"></a>
+        </div>
+    </div>
+    <div class="bi-body">
+        <!-- 菜单 -->
+        <div class="bi-menu">
+            <ul>
+                <li><a href="commodity.html" class="a-fadeinL mon"><i class="icon icon1"></i>商品分析</a></li>
+                <li><a href="customert.html" ><i class="icon icon2"></i>顾客分析</a></li>
+                <li><a href="supply.html" ><i class="icon icon3"></i>供应商分析</a></li>
+                <li><a href="personnel.html" ><i class="icon icon4"></i>人员分析</a></li>
+            </ul>
+        </div>
+        <!-- 菜单 end-->
+        <!-- 主体 -->
+        <div class="bi-main">
+            <div class="bi-main-box">
+                <!-- 性别/职业/学历 -->
+                <div class="row mgt-20">
+                    <div class="col-6">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">商品库存</span></div>
+                            <div class="bd  pd-0 ">
+                                <div id="merchandiseInventory" class="chartsbox3 "></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10 ">
+                            <div class="hd"><span class="u-tab">商品销量</span></div>
+                            <div class="bd  pd-0">
+                                <div id="sales" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-12">
+                        <div class="chartbox">
+                            <div class="hd"><span class="u-tab">商品淘汰率/引进率/置换率</span></div>
+                            <div class="bd">
+                                <div id="c3" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-6">
+                        <div class="chartbox mgr-10">
+                            <div class="hd">
+                                <span class="u-tab">库存/销量/销售额</span>
+                                <span class="f-fr pdr-10">
+                                    <select class="h-25 l-h-25"  id="goodsSal">
+                                        <option value="空调">--空调--</option>
+                                        <option value="电视">--电视--</option>
+                                        <option value="冰箱">--冰箱--</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="bd">
+                                <div id="allgoods" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10">
+                            <div class="hd">
+                                <span class="u-tab">品牌数/品项数/动销率/适销率</span>
+                                <span class="f-fr pdr-10">
+                                    <select class="h-25 l-h-25"  id="goodsP">
+                                        <option value="空调">--空调--</option>
+                                        <option value="电视">--电视--</option>
+                                        <option value="冰箱">--冰箱--</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="bd">
+                                <div id="goods_attribute" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-12">
+                        <div class="chartbox">
+                            <div class="hd"><span class="u-tab">促销活动商品列表</span></div>
+                            <div class="bd pd-0">
+                                <div id="c5" class="chartsbox3"><table id="biTable6" cellspacing="0" class="biTable" width="100%"></table></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-12">
+                        <div class="chartbox">
+                            <div class="hd"><span class="u-tab">促销活动商品销量柱状图</span></div>
+                            <div class="bd  pd-0">
+                                <div id="c6" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-6">
+                        <div class="chartbox mgr-10">
+                            <div class="hd"><span class="u-tab">畅销商品列表</span></div>
+                            <div class="bd pd-0">
+                                <div id="c7" class="chartsbox3"><table id="biTable2" cellspacing="0" class="biTable" width="100%"></table></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10">
+                            <div class="hd"><span class="u-tab">滞销商品列表</span></div>
+                            <div class="bd pd-0">
+                                <div id="c8" class="chartsbox3"><table id="biTable3" cellspacing="0" class="biTable" width="100%"></table></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row mgt-20 mgb-20">-->
+                    <!--<div class="col-12">-->
+                        <!--<div class="chartbox">-->
+                            <!--<div class="hd"><span class="u-tab">滞销商品列表</span></div>-->
+                            <!--<div class="bd pd-0">-->
+                                <!--<div id="c8" class="chartsbox3"><table id="biTable3" cellspacing="0" class="biTable" width="100%"></table></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!-- 性别/职业/学历 end-->
+            </div>
+        </div>
+        <!-- 主体 end-->
+        <!--          <span class="f-cb">&#160;</span> -->
+    </div>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/commodity.js"></script>
+</body>
+
+</html>

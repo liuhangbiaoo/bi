@@ -1,0 +1,88 @@
+/*
+* @Author: jsgu
+* @Date:   2016-08-20 17:28:25
+* @Last Modified by:   jsgu
+* @Last Modified time: 2016-08-22 16:55:44
+*/
+h1 { text-align: center; }
+body { background: #f3f3f3; }
+.chartbox { background: #fff; border: 1px solid #e5e5e5; border-radius: 3px; }
+.chartbox .hd { background: #f0f4fb; height: 40px; border-bottom: 1px solid #e5e5e5; }
+.chartbox .hd span { color: #444; font: 16px/40px  "微软雅黑"; padding-left: 18px; }
+.chartbox .bd { padding: 8px; }
+.chartsbox0 { width: 100%; height: 220px; }
+.chartsbox1 { width: 100%; height: 275px; }
+.chartsbox2 { width: 100%; height: 320px; }
+.chartsbox3 { width: 100%; height: 375px; }
+.chartsbox4 { width: 100%; height: 420px; }
+.chartsbox5 { width: 100%; height: 475px; }
+.chartsbox6 { width: 100%; height: 520px; }
+.chartsbox7 { width: 100%; height: 575px; }
+
+.biTable{padding:0;border-top:2px solid #afc3e6;}
+.biTable thead{height:40px;background:#f0f4fb;}
+.biTable thead th{font:12px/40px "微软雅黑";text-align:center;color:#777777; font-weight:bold;}
+.biTable tbody td{text-align:center;color:#444444;font:12px/40px "宋体";}
+.biTable tbody .odd{background:#f0f4fb;}
+.biTable tbody .even{background:#fff;}
+.biTable tbody a{color: #449fe6;}
+
+.bi-tab{overflow: hidden;}
+.bi-tab a{display: inline-block;*display: inline;*zoom: 1; padding: 3px 8px;}
+.bi-tab a .icon{display: block;float: left;margin-right: 5px;background: #7996D2;width: 18px;height: 12px;border-radius: 3px;margin-top: 4px;}
+
+/* 头部 */
+.bi-head { height: 64px; background: #364860;	position: fixed;left: 0;top: 0;width: 100%;z-index: 99; }
+.bi-logo { width: 200px; height: 64px; overflow: hidden; background: #2a3950; }
+.bi-barinfo a { color: #fff; font: 14px/64px  "微软雅黑"; display: inline-block; *display: inline; *zoom: 1; padding: 0 20px }
+.bi-barinfo  a:hover { background: #2a3950; }
+
+/* 头部 end*/
+.bi-body { position: relative; overflow: hidden; padding-top: 64px;}
+
+/* 主体 */
+.bi-main { float: right; width: 100%; }
+.bi-main-box { margin-left: 220px; margin-right: 20px; }
+
+/* 主体 end*/
+
+/* 侧栏菜单 */
+.bi-menu { position: relative; float: left; width: 200px; margin-right: -220px; background: #364860;/* min-height: 850px*/}
+.bi-menu li { height: 54px; margin: 8px 0; }
+.bi-menu li a { color: #b5b5b5; display: block; font: bold 16px/54px  \5fae\8f6f\96c5\9ed1; border-left: 3px solid #364860; padding-left: 38px; }
+.bi-menu li a:hover, .bi-menu li .mon { border-left: 3px solid #1796f9; background: #2a3950; color: #fff; }
+.bi-menu li .icon { background: url(../images/icon.png) no-repeat 0 0; width: 27px; height: 27px; display: block; float: left; margin-top: 13px; margin-right: 2px; }
+.bi-menu li .icon1 { background: url(../images/icon.png) no-repeat 0px 0; }
+.bi-menu li .icon2 { background: url(../images/icon.png) no-repeat -27px 0; }
+.bi-menu li .icon3 { background: url(../images/icon.png) no-repeat -54px 0; }
+.bi-menu li .icon4 { background: url(../images/icon.png) no-repeat -81px 0; }
+.bi-menu li a:hover .icon1 { background: url(../images/icon.png) no-repeat 0px -27px; }
+.bi-menu li a:hover .icon2 { background: url(../images/icon.png) no-repeat -27px -27px; }
+.bi-menu li a:hover .icon3 { background: url(../images/icon.png) no-repeat -54px -27px; }
+.bi-menu li a:hover .icon4 { background: url(../images/icon.png) no-repeat -81px -27px; }
+
+
+.bi-menu ul,.fixul{
+	position: fixed;
+	left: 0;
+	top: 64px;
+	width: 200px;
+	z-index: 9;
+}
+
+
+/* 侧栏菜单 end*/
+
+.pointer{cursor: pointer;background: #fff;}
+.bg_active{
+    background-color: #364860;
+    color: #fff;
+}
+.active:hover{
+    background-color: #364860;
+    color: #fff;
+    transition:0.2s;
+}
+
+/*表格样式*/
+.biTable tbody  tr:hover{ background: #dae2f3;}

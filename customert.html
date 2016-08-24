@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商超BI系统-SMARK BI-顾客分析</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+</head>
+
+<body>
+    <div class="bi-head">
+        <div class="bi-barinfo f-fr"><a href="javascript:void(0)">admin<img src="images/bar1.png" class="f-fl pdt-14 pdr-5" alt="用户名"></a>
+            <a href="index.html">退出<img src="images/bar2.png" alt="退出" class="f-fl pdt-22 pdr-5"></a>
+        </div>
+        <div class="bi-logo">
+            <a href="commodity.html"><img src="images/logo.png" alt="SMARK BI"></a>
+        </div>
+    </div>
+    <div class="bi-body">
+        <!-- 菜单 -->
+        <div class="bi-menu">
+            <ul>
+                <li><a href="commodity.html" ><i class="icon icon1"></i>商品分析</a></li>
+                <li><a href="customert.html" class="a-fadeinL mon"><i class="icon icon2"></i>顾客分析</a></li>
+                <li><a href="supply.html" ><i class="icon icon3"></i>供应商分析</a></li>
+                <li><a href="personnel.html" ><i class="icon icon4"></i>人员分析</a></li>
+            </ul>
+        </div>
+        <!-- 菜单 end-->
+        <!-- 主体 -->
+        <div class="bi-main">
+            <div class="bi-main-box">
+                
+               <!--  <div class="col-12">
+                   <div class="row mgt-20">
+                       <select class="h-25 l-h-25"  id="yearOption">
+                           <option value="2016">--2016年--</option>
+                           <option value="2015">--2015年--</option>
+                       </select>
+                       <ul class="col-3 f-tac">
+                           <li class="col-4">
+                               <input type="radio"  value="year" name="type" checked>按年</input>
+                           </li>
+                           <li class="col-4">
+                               <input type="radio"  value="month" name="type">按月</input>
+                           </li>
+                           <li class="col-4">
+                               <input type="radio"  value="season" name="type">按季度</input>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+                -->
+                <div class="row mgt-20">
+                    <div class="col-4">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">客户年纪分析</span></div>
+                            <div class="bd">
+                                <!-- 客户年龄分布 -->
+                                <div id="c_age" class="chartsbox2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10  mgr-10">
+                            <div class="hd"><span class="u-tab">客户性别分布</span></div>
+                            <div class="bd">
+                                <div id="c_sex" class="chartsbox2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10 ">
+                            <div class="hd"><span class="u-tab">客户会员等级分析</span></div>
+                            <div class="bd">
+                                <div id="c_member" class="chartsbox2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                 <div class="row mgt-20">
+                      <div class="col-6">
+                            <div class="chartbox mgr-10 ">
+                                <div class="hd"><span class="u-tab">客户收入分析</span></div>
+                                <div class="bd">
+                                    <div id="c_economy_income" class="chartsbox3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10 ">
+                            <div class="hd"><span class="u-tab">客户区域分布(公里)</span></div>
+                            <div class="bd">
+                                <div id="c_area" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mgt-20  bg-ffffff pdt-10 pdb-10 f-ti2">排行Top选择:
+                    <select class="h-25 l-h-25"  id="c_buy_year_option">
+                        <option value="5">--Top3--</option>
+                        <option value="10">--Top5--</option>
+                        <option value="15">--Top8--</option>
+                    </select>
+                </div>
+
+                <div class="row mgt-20">
+                    <div class="col-6">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">客户购买最多商品分类排行</span></div>
+                            <div class="bd">
+                                <div id="c_buy_classify" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10 ">
+                            <div class="hd"><span class="u-tab">客户购买最多商品宝贝排行</span></div>
+                            <div class="bd">
+                                <div id="c_buy_goods" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                 <div class="row mgt-20">
+                    <div class="col-6">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd">
+                                <span class="u-tab">客户停滞时间分析</span>
+                                <span class='f-fr pdr-10'>
+                                    <select class="h-25 "  id="c_stop_time_option">
+                                        <option value="1">--昨天--</option>
+                                        <option value="2">--前天--</option>
+                                    </select>
+                                </span>
+                                 
+                            </div>
+
+                            <div class="bd">
+                                <div id="c_stop_time" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                        <!-- <p style="color: red" id="saleTip">提示:经分析每天中客户数量较多时间点在16-18点之间</p> -->
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10 ">
+                            <div class="hd"><span class="u-tab">客户访问间隔天数分析(前60天用户)</span></div>
+                            <div class="bd">
+                                <div id="c_visit" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mgt-20">
+                    <div class="col-6">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">客户流动同比分析</span></div>
+                            <div class="bd">
+                                <div id="c_out_on_year" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                         <!-- <p style="color: red" id="saleTip">提示:经分析2015年女性客户流动减少,男性客户增加</p> -->
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10 ">
+                            <div class="hd"><span class="u-tab">客户流动环比分析</span></div>
+                            <div class="bd">
+                                <div id="c_out_on_ring" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                         <!-- <p style="color: red" id="saleTip">提示:经分析当前前4个月男女流动基本处于稳定状态</p> -->
+                    </div>
+                </div>
+              <!--   
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-12">
+                        <div class="chartbox  ">
+                            <div class="hd"><span class="u-tab">分段时间点顾客购买最多商品统计</span></div>
+                            <div class="bd">
+                                <div id="c_buy_time" class="chartsbox2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-12">
+                        <div class="chartbox">
+                            <div class="hd"><span class="u-tab">一天分段时间点顾客购买最多商品统计</span></div>
+                            <div class="bd pd-0">
+                                <div id="c_buy_time" class=""><table id="biTable" cellspacing="0" class="biTable" width="100%"></table></div>
+                            </div>
+                        </div>
+                        <p style="color: red" id="saleTip"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 主体 end-->
+        <!--          <span class="f-cb">&#160;</span> -->
+    </div>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/customert.js"></script>
+</body>
+
+</html>

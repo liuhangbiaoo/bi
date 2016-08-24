@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商超BI系统-SMARK BI</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+</head>
+
+<body>
+    <div class="bi-head">
+        <div class="bi-barinfo f-fr"><a href="javascript:void(0)">凤毛麟角<img src="images/bar1.png" class="f-fl pdt-14 pdr-5" alt="用户名"></a>
+            <a href="javascript:void(0)">退出<img src="images/bar2.png" alt="退出" class="f-fl pdt-22 pdr-5"></a>
+        </div>
+        <div class="bi-logo">
+            <a href="index.html"><img src="images/logo.png" alt="SMARK BI"></a>
+        </div>
+    </div>
+    <div class="bi-body">
+        <!-- 菜单 -->
+        <div class="bi-menu">
+            <ul class="fixul">
+                <li><a href="commodity.html" class="a-fadeinL"><i class="icon icon1"></i>商品分析</a></li>
+                <li><a href="customert.html" class="a-fadeinL"><i class="icon icon2"></i>顾客分析</a></li>
+                <li><a href="supply.html" class="a-fadeinL mon"><i class="icon icon3"></i>供应商分析</a></li>
+                <li><a href="personnel.html" class="a-fadeinL"><i class="icon icon4"></i>人员分析</a></li>
+            </ul>
+        </div>
+        <!-- 菜单 end-->
+        <!-- 主体 -->
+        <div class="bi-main">
+            <div class="bi-main-box">
+                <!-- 图例一/图例二/图例三 -->
+                <div class="row mgt-20">
+                    <div class="col-4">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例一</span></div>
+                            <div class="bd">
+                                <div id="c1" class="chartsbox0"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10 mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例二</span></div>
+                            <div class="bd">
+                                <div id="c2" class="chartsbox0"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10  ">
+                            <div class="hd"><span class="u-tab">图例三</span></div>
+                            <div class="bd">
+                                <div id="c3" class="chartsbox0"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图例一/图例二/图例三 end-->
+                <!-- 图例四/图例五/图例六 -->
+                <div class="row mgt-20">
+                    <div class="col-4">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例四</span></div>
+                            <div class="bd">
+                                <div id="c4" class="chartsbox0"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10 mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例五</span></div>
+                            <div class="bd">
+                                <div id="c5" class="chartsbox0"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10  ">
+                            <div class="hd"><span class="u-tab">图例六</span></div>
+                            <div class="bd">
+                                <div id="c6" class="chartsbox0"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图例四/图例五/图例六 end-->
+                <!-- 图例七/图例八 -->
+                <div class="row mgt-20">
+                    <div class="col-6">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例七</span></div>
+                            <div class="bd">
+                                <div id="c7" class="chartsbox1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10 ">
+                            <div class="hd"><span class="u-tab">图例八</span></div>
+                            <div class="bd">
+                                <div id="c8" class="chartsbox1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图例七/图例八 end-->
+                <!--图例九/图例十 -->
+                <div class="row mgt-20">
+                    <div class="col-6">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例九</span></div>
+                            <div class="bd">
+                                <div id="c9" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10 ">
+                            <div class="hd"><span class="u-tab">图例十</span></div>
+                            <div class="bd">
+                                <div id="c10" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图例九/图例十 end-->
+                  <!--图例十一/图例十二 -->
+                <div class="row mgt-20">
+                    <div class="col-6">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例十一</span></div>
+                            <div class="bd">
+                                <div id="c11" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10 ">
+                            <div class="hd"><span class="u-tab">图例十二</span></div>
+                            <div class="bd">
+                                <div id="c12" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图例十一/图例十二 end-->
+                 <!--图例十三/图例十四 -->
+                <div class="row mgt-20">
+                    <div class="col-6">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例十三</span></div>
+                            <div class="bd">
+                                <div id="c13" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox mgl-10 ">
+                            <div class="hd"><span class="u-tab">图例十四</span></div>
+                            <div class="bd">
+                                <div id="c14" class="chartsbox3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图例十三/图例十四 end-->
+                <!-- 图例十五/图例十六/图例十七 -->
+                <div class="row mgt-20">
+                    <div class="col-4">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例十五</span></div>
+                            <div class="bd">
+                                <div id="c15" class="chartsbox2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10 mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例十六</span></div>
+                            <div class="bd">
+                                <div id="c16" class="chartsbox2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10  ">
+                            <div class="hd"><span class="u-tab">图例十七</span></div>
+                            <div class="bd">
+                                <div id="c17" class="chartsbox2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图例十五/图例十六/图例十七 end-->
+                  <!-- 图例十八/图例十九/图例二十 -->
+                <div class="row mgt-20">
+                    <div class="col-4">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例十八</span></div>
+                            <div class="bd">
+                                <div id="c18" class="chartsbox2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10 mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例十九</span></div>
+                            <div class="bd">
+                                <div id="c19" class="chartsbox2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10  ">
+                            <div class="hd"><span class="u-tab">图例二十</span></div>
+                            <div class="bd">
+                                <div id="c20" class="chartsbox2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图例十八/图例十九/图例二十 end-->
+                 <!-- 图例二十一/图例二十二/图例二十三 -->
+                <div class="row mgt-20">
+                    <div class="col-4">
+                        <div class="chartbox mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例二十一</span></div>
+                            <div class="bd">
+                                <div id="c21" class="chartsbox1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10 mgr-10 ">
+                            <div class="hd"><span class="u-tab">图例二十二</span></div>
+                            <div class="bd">
+                                <div id="c22" class="chartsbox1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="chartbox mgl-10  ">
+                            <div class="hd"><span class="u-tab">图例二十三</span></div>
+                            <div class="bd">
+                                <div id="c23" class="chartsbox1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图例二十一/图例二十二/图例二十三 end-->
+
+                <!-- 图例二十四 /图例二十五-->
+                <div class="row mgt-20 mgb-20">
+                    <div class="col-6">
+                        <div class="chartbox  mgr-10">
+                            <div class="hd"><span class="u-tab">图例二十四</span></div>
+                            <div class="bd">
+                                <div id="c24" class="chartsbox6"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="chartbox  mgl-10">
+                            <div class="hd"><span class="u-tab">图例二十五</span></div>
+                            <div class="bd">
+                                <div id="c25" class="chartsbox6">
+                                    <div class="bi-tab">
+                                        <a href="javascript:void(0)"><i class="icon"></i>一季度消费</a>
+                                        <a href="javascript:void(0)"><i class="icon"></i>二季度消费</a>
+                                        <a href="javascript:void(0)"><i class="icon"></i>三季度消费</a>
+                                        <a href="javascript:void(0)"><i class="icon"></i>四季度消费</a>
+                                    </div>
+                                    <table id="biTable" cellspacing="0" class="biTable" width="100%"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图例二十四/图例二十五 end-->
+            </div>
+        </div>
+        <!-- 主体 end-->
+    </div>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

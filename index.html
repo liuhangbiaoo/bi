@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商超BI系统-SMARK BI  首页登录</title>
+	 <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <style>
+    	body,.bgbox{
+    		position: relative;
+    		width: 100%;
+    		height: 100%;
+    		overflow: hidden;
+    	}
+    	.bgbox{
+    		background:#000a14 url(images/bg.jpg) top center fixed no-repeat;
+    	}
+    	.login-box{
+    		background: url(images/op5.png);
+    		width: 500px;
+    	/* 	opacity: .5;
+    		filter: alpha(opacity=50); */
+    		height: 350px;
+    		position: absolute;  
+    		left: 50%;
+    		margin-left: -250px;
+    		top: 50%;
+    		margin-top: -155px;
+    		border-radius: 15px;
+    	}
+    	label{
+    		display: block;
+    		height: 55px;
+    	}
+    	label span{
+    		display: block; width: 130px;float: left;
+    		text-align: right;
+    		color: #fff;
+    		font-size: 16px;
+    	}
+		label  input{
+			height: 30px;
+			width: 230px;
+			padding-left: 12px;
+		}
+		button{
+			width: 120px;
+			height: 40px;
+			border: 0;
+			font-size: 15px;
+			color: #000a14;
+		}
+		h1{
+			text-align: center;
+		}
+    </style>
+</head>
+<body>
+	<div class="bgbox">
+		<div class="login-box">
+			<div class="lable">
+				<h1 class="c-ffffff pdt-25 pdb-25">欢迎进入SMARK BI</h1>
+				<label class="pdt-10"><span>账号：</span><input type="text" name="name" id="name" value="admin"></label>
+				<label><span>密码：</span><input type="password" name="pass" value="123456" id="pass"></label>
+				<label><span>&#160;</span><button id="login">登录</button></label>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			$(".bgbox").height($(window).height())
+
+
+			$("#login").on("click",function(){
+				var name=$("#name").val();
+				var pass=$("#pass").val();
+				if(name!="admin" || pass!="123456"){
+					alert("账户或密码输入错误，请输入正确的账号密码!")
+				}else{
+					// window.location.href=window.location.origin+"/commodity.html";
+					window.location.href="commodity.html";
+				}
+			})
+		})
+	</script>
+</body>
+</html>
